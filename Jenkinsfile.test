@@ -35,6 +35,10 @@ spec:
       imagePullPolicy: IfNotPresent
       command: [\"cat\"]
       tty: true
+    - name: jnlp
+      image: harbor.zoudekang.cloud:3443/dockerhub-proxy/jenkins/inbound-agent:3355.v388858a_47b_33-3-jdk21
+      imagePullPolicy: Always
+      workingDir: /home/jenkins/agent
   volumes:
     - name: m2-cache
       persistentVolumeClaim:
